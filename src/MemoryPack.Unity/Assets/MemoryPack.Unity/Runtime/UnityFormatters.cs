@@ -1,4 +1,4 @@
-﻿#nullable enable
+#nullable enable
 
 using MemoryPack.Internal;
 using UnityEngine;
@@ -9,7 +9,7 @@ namespace MemoryPack
     internal sealed class AnimationCurveFormatter : MemoryPackFormatter<AnimationCurve>
     {
         [Preserve]
-        public override void Serialize<TBufferWriter>(ref MemoryPackWriter<TBufferWriter> writer, ref AnimationCurve? value)
+        public override void Serialize<TBufferWriter>(ref MemoryPackWriter<TBufferWriter> writer, scoped ref AnimationCurve? value)
         {
             if (value == null)
             {
@@ -22,7 +22,7 @@ namespace MemoryPack
         }
 
         [Preserve]
-        public override void Deserialize(ref MemoryPackReader reader, ref AnimationCurve? value)
+        public override void Deserialize(ref MemoryPackReader reader, scoped ref AnimationCurve? value)
         {
             if (!reader.TryReadObjectHeader(out var count))
             {
@@ -50,7 +50,7 @@ namespace MemoryPack
     internal sealed class GradientFormatter : MemoryPackFormatter<Gradient>
     {
         [Preserve]
-        public override void Serialize<TBufferWriter>(ref MemoryPackWriter<TBufferWriter> writer, ref Gradient? value)
+        public override void Serialize<TBufferWriter>(ref MemoryPackWriter<TBufferWriter> writer, scoped ref Gradient? value)
         {
             if (value == null)
             {
@@ -65,7 +65,7 @@ namespace MemoryPack
         }
 
         [Preserve]
-        public override void Deserialize(ref MemoryPackReader reader, ref Gradient? value)
+        public override void Deserialize(ref MemoryPackReader reader, scoped ref Gradient? value)
         {
             if (!reader.TryReadObjectHeader(out var count))
             {
@@ -94,7 +94,7 @@ namespace MemoryPack
     internal sealed class RectOffsetFormatter : MemoryPackFormatter<RectOffset>
     {
         [Preserve]
-        public override void Serialize<TBufferWriter>(ref MemoryPackWriter<TBufferWriter> writer, ref RectOffset? value)
+        public override void Serialize<TBufferWriter>(ref MemoryPackWriter<TBufferWriter> writer, scoped ref RectOffset? value)
         {
             if (value == null)
             {
@@ -106,7 +106,7 @@ namespace MemoryPack
         }
 
         [Preserve]
-        public override void Deserialize(ref MemoryPackReader reader, ref RectOffset? value)
+        public override void Deserialize(ref MemoryPackReader reader, scoped ref RectOffset? value)
         {
             if (!reader.TryReadObjectHeader(out var count))
             {
